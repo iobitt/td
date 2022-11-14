@@ -10,3 +10,8 @@ jobs:
           branch: v3.15
       - run: cat /etc/alpine-release
         shell: alpine.sh {0}
+      - run: apk update
+      - run: apk upgrade
+      - run: apk add --update alpine-sdk linux-headers git zlib-dev openssl-dev gperf php cmake
+      - run: git clone https://github.com/tdlib/td.git
+      - run: ls -l
